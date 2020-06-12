@@ -1,0 +1,21 @@
+{#home page#}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Afvinkopdracht 3</title>
+    </head>
+    <body>
+{#    header and user input to search the database#}
+        <h2>Search the ensembl database:</h2>
+        <form action="{{ url_for('database') }}" method="post">
+            <input type = "text" name= "search" />
+            <input type = "submit" value="search databse" >
+        </form>
+        <br><hr>
+{#        display the list results with a for loop#}
+        {% for i in resultlist %}
+            {{ i }}<br>
+        {% endfor %}
+    </body>
+</html>
